@@ -4,7 +4,7 @@ import FormInputRow, { INPUT_TYPE } from './FormInputRow';
 
 export default Form;
 
-function Form({ canary }) {
+function Form({ canary, onlyPetID = false }) {
     const [userInput, setUserInput] = useReducer((state, newState) => ({ ...state, ...newState }), {
         petID: '0123456001',
         name: 'Petto1',
@@ -19,10 +19,15 @@ function Form({ canary }) {
         setUserInput({ [name]: value });
     };
 
+    const items = (() => {
+        if (onlyPetID) return ['petID'];
+        return ['petID', 'name', 'age', 'petType', 'picture', 'citizenID'];
+    })();
+
     return (
         <>
             <div className="">
-                {['petID', 'name', 'age', 'petType', 'picture', 'citizenID'].map((key) => (
+                {items.map((key) => (
                     <FormInputRow
                         key={key}
                         inputType={INPUT_TYPE.TEXT}
@@ -33,7 +38,7 @@ function Form({ canary }) {
                     />
                 ))}
             </div>
-            <button className="m-5 p-5" onClick={() => canary(userInput)}>
+            <button className="m-5 p-5" onClick={() => canary({ ...userInput, age: parseInt(userInput.age) })}>
                 Process
             </button>
         </>
