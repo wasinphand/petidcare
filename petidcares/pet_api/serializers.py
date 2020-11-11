@@ -14,7 +14,7 @@ class PetSerializer(serializers.Serializer):
         MinValueValidator(1)
     ])
     petType = serializers.CharField(max_length=20)
-    picture = serializers.ImageField(allow_empty_file=True)
+    picture = serializers.CharField(max_length=1000)
     citizenID = serializers.CharField(max_length=13, validators=[
         MinLengthValidator(13)])
 

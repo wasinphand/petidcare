@@ -32,7 +32,7 @@ class Pet(models.Model):
         MinValueValidator(1)
     ])
     petType = models.CharField(max_length=20)
-    picture = models.ImageField()
+    picture = models.CharField(max_length=1000)
     citizenID = models.ForeignKey('User', on_delete=models.CASCADE)
 
     def __str__(self):

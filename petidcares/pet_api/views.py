@@ -35,6 +35,7 @@ class PetView(APIView):
             p.picture = request.data['picture']
             p.save()
             return Response({'message': 'success'})
+        print('error ', serializer.errors)
         return Response({'message': 'fail'})
 
     # def patch(self, request, pk, format=None):
