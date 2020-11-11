@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import {
     BrowserRouter as Router,
     Switch,
@@ -11,6 +10,6 @@ export default Home;
 
 function Home() {
   return <>
-        
+
     </>;
 }

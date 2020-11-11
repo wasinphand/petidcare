@@ -4,9 +4,11 @@ import './css/index.css';
 import './css/bootstrap.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Header} from './components/header';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Header/>
     <App />
   </React.StrictMode>,
   document.getElementById('root')
