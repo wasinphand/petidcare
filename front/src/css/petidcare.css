@@ -1,0 +1,6 @@
+body {
+    @font-face {
+        font-family: "default-font";
+        src: url("./fonts/Fontania.ttf");
+    }
+}
