@@ -1,12 +1,12 @@
-import React from "react";
-import FormInputRow, { INPUT_TYPE } from "./FormInputRow";
+import React from "react"; 
+import Form from "./Form";
 
 export default Index;
 
 function Index() {
   return (
     <div>
-      <FormInputRow inputType={INPUT_TYPE.TEXT} name="test1" title="test1"/>
+      <Form canary={() => {}} />
     </div>
   );
 }
