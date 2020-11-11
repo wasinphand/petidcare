@@ -10,10 +10,11 @@ function Create() {
             <header>Create</header>
             <Form
                 canary={(userInput) => {
-                    
-                    axios.post('http://localhost:8000/api/pet/', { ...userInput, age: parseInt(userInput.age) }).then((res) => {
-                        console.log(res);
-                    });
+                    axios
+                        .post('http://localhost:8000/api/pet/', { ...userInput })
+                        .then((res) => {
+                            console.log(res);
+                        });
                 }}
             />
         </>
